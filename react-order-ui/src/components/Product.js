@@ -1,8 +1,8 @@
 function Product(props) {
-  const { id, productName, category, price } = props;
+  const { productId, productName, category, price } = props;
 
-  const handleAddBtnClicked = (e) => {
-    props.onAddClick(id);
+  const handleAddBtnClicked = () => {
+    props.onAddClick(productId);
   };
 
   return (
