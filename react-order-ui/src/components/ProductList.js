@@ -1,6 +1,6 @@
 import Product from './Product';
 
-function ProductList({ products }) {
+function ProductList({ products, onAddClick }) {
   return (
     <>
       <h5 className='flex-grow-0'>
@@ -8,8 +8,8 @@ function ProductList({ products }) {
       </h5>
       <ul className='list-group products'>
         {products.map((product) => (
-          <li key={product.productId} className='list-group-item d-flex mt-3'>
-            <Product productName={product.productName} category={product.category} price={product.price} />
+          <li key={product.id} className='list-group-item d-flex mt-3'>
+            <Product {...product} onAddClick={onAddClick} />
           </li>
         ))}
       </ul>

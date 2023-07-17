@@ -1,5 +1,10 @@
 function Product(props) {
-  const { productName, category, price } = props;
+  const { id, productName, category, price } = props;
+
+  const handleAddBtnClicked = (e) => {
+    props.onAddClick(id);
+  };
+
   return (
     <>
       <div className='col-2'>
@@ -11,7 +16,7 @@ function Product(props) {
       </div>
       <div className='col text-center price'>{price}원</div>
       <div className='col text-end action'>
-        <button className='btn btn-small btn-outline-dark' href=''>
+        <button onClick={handleAddBtnClicked} className='btn btn-small btn-outline-dark' href=''>
           추가
         </button>
       </div>
